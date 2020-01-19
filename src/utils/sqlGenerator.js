@@ -78,5 +78,22 @@ SqlGenerator.prototype.insertWeather = function(weather) {
   return query;
 }
 
+// --------------------------- Dailywork-workassign Table --------------------------------
+
+// Insert work assign query
+// *** input param should be a worker Object (in js cannot define type)
+SqlGenerator.prototype.insertWorkAssign = function(workAssign) {
+  var query = "INSERT INTO dailywork (curDate, lMobile, typeID, fieldID, amount) VALUES (" + 
+    "'" + workAssign.date + "', " +
+    "'" + workAssign.lMobile + "', " +
+    "" + workAssign.typeID + ", " +
+    "" + workAssign.field + ", " +
+    "" + workAssign.amount + ")";
+
+    // *** use a console.log to view query before do other things.
+     //console.log(query);
+  return query;
+}
+
 // Export SQL generator
 module.exports = SqlGenerator;
