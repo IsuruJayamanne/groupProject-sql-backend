@@ -95,5 +95,14 @@ SqlGenerator.prototype.insertWorkAssign = function(workAssign) {
   return query;
 }
 
+// ------------------------------ Set targets table ---------------------------------------
+
+// Get all fields' areas
+SqlGenerator.prototype.getAllFieldAreas = function(div) {
+  var query = "SELECT * FROM field WHERE divNo =" + div;
+  console.log(query);
+  return query;
+}
+
 // Export SQL generator
 module.exports = SqlGenerator;

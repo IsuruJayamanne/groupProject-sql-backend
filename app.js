@@ -8,6 +8,7 @@ var logger = require('morgan');
 var laborerRouter = require('./src/routes/laborer.route');
 var weatherRouter = require('./src/routes/weather.route');
 var workAssignRouter = require('./src/routes/workAssign.route');
+var setTargetRouter = require('./src/routes/setTarget.route');
 // *** import other routers here
 
 // Initialize express app
@@ -36,6 +37,7 @@ app.use(function (req, res, next) {
 app.use('/api/laborer', laborerRouter);
 app.use('/api/weather', weatherRouter);
 app.use('/api/workAssign', workAssignRouter);
+app.use('/api/setTarget', setTargetRouter);
 // *** set route paths here. keep the structure of paths. it will help to handle lots of routes easily.
 
 // Export express application
