@@ -1,12 +1,12 @@
 // setTarget model
 
 // Default constructor
-var SetTarget = function(division, field, date, month, target) {
+var SetTarget = function(division, field1, field2, field3) {
     this.division = division;
-    this.field= field;
-    this.date = date;
-    this.month = month;
-    this.target = target;
+    this.field1= field1;
+    this.field2= field2;
+    this.field3= field3;
+    //this.target = target;
   }
   
   // Export lset target model

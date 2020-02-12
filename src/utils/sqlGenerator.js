@@ -97,10 +97,22 @@ SqlGenerator.prototype.insertWorkAssign = function(workAssign) {
 
 // ------------------------------ Set targets table ---------------------------------------
 
-// Get all fields' areas
+// Get all fields' areas by division
 SqlGenerator.prototype.getAllFieldAreas = function(div) {
   var query = "SELECT * FROM field WHERE divNo =" + div;
   console.log(query);
+  return query;
+}
+
+// Insert set target query
+SqlGenerator.prototype.insertSetTarget = function(target) {
+  var query = "INSERT INTO targets (divNo, field, target) VALUES (" + 
+    target.division + ",1," +target.field1 + "),(" +
+    target.division + ",2," +target.field2 + "),(" +
+    target.division + ",3," +target.field3 + ");" ;
+
+    // *** use a console.log to view query before do other things.
+    console.log(query);
   return query;
 }
 

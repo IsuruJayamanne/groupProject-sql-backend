@@ -26,6 +26,7 @@ SetTargetController.prototype.getAllFieldAreas = function(div, callback) {
             resultFieldAreas[i].fAcres,
             resultFieldAreas[i].fStatus,
             resultFieldAreas[i].divNo,
+            resultFieldAreas[i].plantYear
           );
           resFieldAreas.push(fieldAreas);
           i++;
@@ -36,40 +37,40 @@ SetTargetController.prototype.getAllFieldAreas = function(div, callback) {
   };
 
   // Insert target to DB
-// SetTargetController.prototype.insertSetTarget = function(reqBody, callback) {
-//     connection.beginTransaction(function(err) {
-//       if (err) {
-//         callback(null, err);
-//       }
+SetTargetController.prototype.insertSetTarget = function(reqBody, callback) {
+    connection.beginTransaction(function(err) {
+      if (err) {
+        callback(null, err);
+      }
   
-//       // *** request should contain below keys exactly as it is.
-//       var setTarget = new SetTarget(
-//         reqBody.division,
-//         reqBody.field,
-//         reqBody.date,
-//         reqBody.month,
-//         reqBody.target
-//       );
+      // *** request should contain below keys exactly as it is.
+      var setTarget = new SetTarget(
+        reqBody.division,
+        reqBody.field1,
+        reqBody.field2,
+        reqBody.field3,
+        //reqBody.target
+      );
   
-//       var sqlQuery = sqlGenerator.insertSetTarget(setTarget);
+      var sqlQuery = sqlGenerator.insertSetTarget(setTarget);
   
-//       sqlGenerator.executeSql(connection, sqlQuery, function(result, err) {
-//         if (err) {
-//           connection.rollback();
-//           callback(null, err);
-//         } else {
-//           connection.commit(function(err) {
-//             if (err) {
-//               connection.rollback();
-//               callback(null, err);
-//             }
-//             console.log("Transaction Complete.");
-//             callback("Target successfully inserted into the system!");
-//           });
-//         }
-//       });
-//     });
-// };
+      sqlGenerator.executeSql(connection, sqlQuery, function(result, err) {
+        if (err) {
+          connection.rollback();
+          callback(null, err);
+        } else {
+          connection.commit(function(err) {
+            if (err) {
+              connection.rollback();
+              callback(null, err);
+            }
+            console.log("Transaction Complete.");
+            callback("Target successfully inserted into the system!");
+          });
+        }
+      });
+    });
+};
   
 
 // Export set targets controller
