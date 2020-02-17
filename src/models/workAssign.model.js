@@ -25,19 +25,19 @@ var WorkAssign = function(date, mobile, type, field, amount) {
         case "Field_1":
             text2 = 1;
             break;
-        case "Field 2":
-            text2 = 2;
+        case "Field_2":
+            text2 =2;
             break;
-        case "Field 3":
+        case "Field_3":
             text2 = 3;
             break;
-        case "Field 4":
+        case "Field_4":
             text2 = 4;
             break;
-        case "Field 5":
+        case "Field_5":
             text2 = 5;
             break;
-        case "Field 6":
+        case "Field_6":
             text2 = 6;
             break;
         
