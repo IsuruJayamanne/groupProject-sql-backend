@@ -49,9 +49,14 @@ SetTargetController.prototype.insertSetTarget = function(reqBody, callback) {
         reqBody.field1,
         reqBody.field2,
         reqBody.field3,
+        reqBody.date,
+        reqBody.month
         //reqBody.target
       );
   
+      console.log(setTarget);
+      //console.log(mString);
+      
       var sqlQuery = sqlGenerator.insertSetTarget(setTarget);
   
       sqlGenerator.executeSql(connection, sqlQuery, function(result, err) {
