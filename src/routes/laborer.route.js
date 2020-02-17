@@ -7,6 +7,7 @@ var laborerController = new LaborerController();
 
 // GET Route - Get laborer by NIC
 router.get("/get/:nic", function(req, res, next) {
+  console.log("labourer router")
   laborerController.getLaborerByNIC(req.params.nic, function(result, err) {
     if (err) {
       res.status(404);
